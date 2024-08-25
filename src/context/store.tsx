@@ -13,18 +13,30 @@ const StoreContext = createContext<StoreContextType | undefined>(undefined);
 export const Store = ({ children }: { children: ReactNode }) => {
   const [venues, setVenues] = useState<Venue[]>([]);
   const [selectedVenue, setSelectedVenue] = useState<Venue | null>(null);
+  const [loading, setLoading] = useState<boolean>(true);
+  const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
     const fetchVenues = async () => {
-      const data = await getVenues();
-      setVenues(data);
+      setLoading(true);
+      try {
+        const data = await getVenues();
+        setVenues(data);
+        setError(null);
+      } catch (err) {
+        setError("Failed to fetch venues.");
+      } finally {
+        setLoading(false);
+      }
     };
 
     fetchVenues();
   }, []);
 
   return (
-    <StoreContext.Provider value={{ venues, selectedVenue, setSelectedVenue }}>
+    <StoreContext.Provider
+      value={{ venues, selectedVenue, setSelectedVenue, loading, error }}
+    >
       {children}
     </StoreContext.Provider>
   );
