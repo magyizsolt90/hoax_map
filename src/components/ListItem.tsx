@@ -4,7 +4,7 @@ import { isOpenNow } from "../functions";
 import Icon from "./ui/Icon";
 
 const ListItem: React.FC<{ venueId: number }> = ({ venueId }) => {
-  const { venues } = useStore();
+  const { venues, setSelectedVenue } = useStore();
 
   const venue = venues.find((v) => v.id === venueId);
 
@@ -14,8 +14,15 @@ const ListItem: React.FC<{ venueId: number }> = ({ venueId }) => {
 
   const isOpen = isOpenNow(venue.openingHours);
 
+  const handleClick = () => {
+    setSelectedVenue(venue);
+  };
+
   return (
-    <div className="p-5 rounded-lg shadow-md flex flex-col space-y-2">
+    <div
+      onClick={handleClick}
+      className="p-5 rounded-lg shadow-md flex flex-col space-y-2 cursor-pointer hover:bg-gray-700"
+    >
       <div className="flex justify-between items-center">
         <span className="font-bold text-lg flex flex-row items-center gap-2">
           <Icon
@@ -58,7 +65,6 @@ const ListItem: React.FC<{ venueId: number }> = ({ venueId }) => {
         <div
           className={`h-3 w-[2px] mr-2 ${isOpen ? "bg-white" : "bg-zinc-500"}`}
         />
-
         <span className="text-sm font-medium">
           {venue.beansInTheGrinder.join(", ")}
         </span>

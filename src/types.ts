@@ -18,6 +18,8 @@ export interface Venue {
 }
 export interface StoreContextType {
   venues: Venue[];
+  selectedVenue: Venue | null;
+  setSelectedVenue: (venue: Venue | null) => void;
 }
 
 export interface OpeningHours {

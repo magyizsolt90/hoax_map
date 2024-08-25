@@ -12,6 +12,7 @@ const StoreContext = createContext<StoreContextType | undefined>(undefined);
 
 export const Store = ({ children }: { children: ReactNode }) => {
   const [venues, setVenues] = useState<Venue[]>([]);
+  const [selectedVenue, setSelectedVenue] = useState<Venue | null>(null);
 
   useEffect(() => {
     const fetchVenues = async () => {
@@ -23,7 +24,9 @@ export const Store = ({ children }: { children: ReactNode }) => {
   }, []);
 
   return (
-    <StoreContext.Provider value={{ venues }}>{children}</StoreContext.Provider>
+    <StoreContext.Provider value={{ venues, selectedVenue, setSelectedVenue }}>
+      {children}
+    </StoreContext.Provider>
   );
 };
 
