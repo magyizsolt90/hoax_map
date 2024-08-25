@@ -19,3 +19,18 @@ export interface Venue {
 export interface StoreContextType {
   venues: Venue[];
 }
+
+export interface OpeningHours {
+  from: string;
+  to: string;
+}
+
+export interface WeeklyOpeningHours {
+  [key: string]: OpeningHours | null;
+}
+
+export interface ImageProps {
+  className?: string;
+  src: string;
+  alt: string;
+}

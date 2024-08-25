@@ -4,7 +4,7 @@ import Map from "./components/Map";
 
 const App: React.FC = () => {
   return (
-    <div>
+    <div className="flex flex-row">
       <List />
       <Map />
     </div>
