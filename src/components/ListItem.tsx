@@ -1,9 +1,9 @@
-import React from "react";
 import { useStore } from "../context/store";
 import { isOpenNow } from "../functions";
 import Icon from "./ui/Icon";
+import { ListItemProps } from "../types";
 
-const ListItem: React.FC<{ venueId: number }> = ({ venueId }) => {
+const ListItem = ({ venueId, map }: ListItemProps) => {
   const { venues, setSelectedVenue } = useStore();
 
   const venue = venues.find((v) => v.id === venueId);
@@ -21,7 +21,11 @@ const ListItem: React.FC<{ venueId: number }> = ({ venueId }) => {
   return (
     <div
       onClick={handleClick}
-      className="p-5 rounded-lg shadow-md flex flex-col space-y-2 cursor-pointer hover:bg-gray-700"
+      className={`p-5 rounded-lg shadow-md flex flex-col space-y-2 cursor-pointer ${
+        map
+          ? "bg-zinc-100 bg-opacity-10 border border-black rounded-[32px] backdrop-blur-md w-[310px]"
+          : "hover:bg-gray-700 "
+      }`}
     >
       <div className="flex justify-between items-center">
         <span className="font-bold text-lg flex flex-row items-center gap-2">
@@ -39,7 +43,7 @@ const ListItem: React.FC<{ venueId: number }> = ({ venueId }) => {
           isOpen ? "text-white" : "text-zinc-500"
         } font-light text-base flex flex-row itemc-center gap-2`}
       >
-        <span>
+        <span className="font-rubik">
           {venue.city}, {venue.street}
         </span>
         {isOpen && (
@@ -65,7 +69,7 @@ const ListItem: React.FC<{ venueId: number }> = ({ venueId }) => {
         <div
           className={`h-3 w-[2px] mr-2 ${isOpen ? "bg-white" : "bg-zinc-500"}`}
         />
-        <span className="text-sm font-medium">
+        <span className="text-sm font-medium text-white font-rubik">
           {venue.beansInTheGrinder.join(", ")}
         </span>
       </div>

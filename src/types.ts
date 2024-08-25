@@ -36,3 +36,8 @@ export interface ImageProps {
   src: string;
   alt: string;
 }
+
+export interface ListItemProps {
+  venueId: number;
+  map?: boolean;
+}
