@@ -2,7 +2,7 @@ import React from "react";
 
 export default function Stores() {
   return (
-    <div className="flex flex-col items-center justify-center gap-2 absolute bg-black bottom-[42px] left-0 w-full ">
+    <div className="flex flex-col items-center justify-center gap-2 absolute bg-black bottom-0 left-0 w-full h-[80px] ">
       <span className="font-rubik font-semibold">többre is kíváncsi vagy?</span>
       <div className="flex flex-row items-center justify-center gap-5">
         <a href="https://apps.apple.com/app/idYOUR_APP_ID" target="_blank">

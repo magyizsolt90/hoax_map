@@ -6,7 +6,7 @@ export default function List() {
   const { venues } = useStore();
 
   return (
-    <div className="flex flex-col w-[30%] bg-black text-white p-4 z-10 relative">
+    <div className="flex flex-col h-screen w-[30%] bg-black text-white p-4 z-10 relative">
       <span className="font-thin text-2xl leading-[60px] font-rubik text-center ">
         HOAX coffee
       </span>
