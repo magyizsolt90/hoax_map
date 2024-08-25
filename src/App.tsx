@@ -1,14 +1,12 @@
-import React, { useEffect } from "react";
-import getVenues from "./API/api";
+import React from "react";
+import List from "./components/List";
+import Map from "./components/Map";
 
 const App: React.FC = () => {
-  useEffect(() => {
-    getVenues();
-  }, []);
-
   return (
     <div>
-      <h1>Check the console for API response</h1>
+      <List />
+      <Map />
     </div>
   );
 };

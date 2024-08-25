@@ -1,0 +1,92 @@
+[
+  {
+    "id": 2,
+    "name": "Coyote Coffee & Deli",
+    "lat": 47.50559861,
+    "lon": 19.03728886,
+    "country": "HU",
+    "city": "Budapest",
+    "street": "Markovits Iván u. 4.",
+    "zipCode": "1011",
+    "openingHours": {
+      "monday": { "from": "07:30", "to": "21:00" },
+      "tuesday": { "from": "07:30", "to": "21:00" },
+      "wednesday": { "from": "07:30", "to": "21:00" },
+      "thursday": { "from": "07:30", "to": "21:00" },
+      "friday": { "from": "07:30", "to": "21:00" },
+      "saturday": { "from": "09:00", "to": "20:00" },
+      "sunday": { "from": "09:00", "to": "19:00" }
+    },
+    "coffeeTypes": [
+      "RISTRETTO",
+      "ESPRESSO",
+      "DOPPIO",
+      "CAPPUCINO",
+      "FLAT_WHITE",
+      "LATTE"
+    ],
+    "features": [
+      "BEANS_FOR_SALE",
+      "BREAKFAST_OR_BRUNCH",
+      "DOG_FRIENDLY",
+      "PLANT_BASED_MILK",
+      "GLUTEN_FREE_OPTIONS",
+      "WHEELCHAIR_ACCESSIBLE",
+      "VEGAN_OR_VEGETARIAN_OPTIONS",
+      "OUTSIDE_SEATING",
+      "CREDIT_CARD_ACCEPTED"
+    ],
+    "type": "CAFE",
+    "interiorImage": "https://hoax-images.fra1.digitaloceanspaces.com/venue-images/2/interior-1685432396691.webp",
+    "exteriorImage": "https://hoax-images.fra1.digitaloceanspaces.com/venue-images/2/exterior-1685432396691.webp",
+    "beansForSale": ["42 Coffee", "Alt Wien", "Coyote"],
+    "beansInTheGrinder": ["42 Coffee", "Alt Wien", "Coyote"]
+  },
+  {
+    "id": 3,
+    "name": "Franziska (Buda)",
+    "lat": 47.50562174,
+    "lon": 19.03723331,
+    "country": "HU",
+    "city": "Budapest",
+    "street": "Iskola u. 29.",
+    "zipCode": "1011",
+    "openingHours": {
+      "monday": { "from": "07:30", "to": "17:00" },
+      "tuesday": { "from": "07:30", "to": "17:00" },
+      "wednesday": { "from": "07:30", "to": "17:00" },
+      "thursday": { "from": "07:30", "to": "17:00" },
+      "friday": { "from": "07:30", "to": "17:00" },
+      "saturday": { "from": "09:00", "to": "16:00" },
+      "sunday": { "from": "09:00", "to": "16:00" }
+    },
+    "coffeeTypes": [
+      "ESPRESSO",
+      "DOPPIO",
+      "MACCHIATO",
+      "CAPPUCINO",
+      "FLAT_WHITE",
+      "LATTE",
+      "MATCHA",
+      "MATCHA_LATTE",
+      "SMOOTHIE"
+    ],
+    "features": [
+      "WIFI",
+      "BEANS_FOR_SALE",
+      "BREAKFAST_OR_BRUNCH",
+      "DOG_FRIENDLY",
+      "PLANT_BASED_MILK",
+      "GLUTEN_FREE_OPTIONS",
+      "WHEELCHAIR_ACCESSIBLE",
+      "VEGAN_OR_VEGETARIAN_OPTIONS",
+      "OUTSIDE_SEATING",
+      "CREDIT_CARD_ACCEPTED"
+    ],
+    "type": "CAFE",
+    "interiorImage": "https://hoax-images.fra1.digitaloceanspaces.com/venue-images/3/interior-1685434228395.webp",
+    "exteriorImage": "https://hoax-images.fra1.digitaloceanspaces.com/initial-venue-images/franziska_buda.jpg",
+    "beansForSale": ["Racer Beans"],
+    "beansInTheGrinder": ["Racer Beans"]
+  }
+]
