@@ -1,43 +1,46 @@
 import { OpeningHours, WeeklyOpeningHours } from "./types";
 
-export const isOpenNow = (openingHours: WeeklyOpeningHours): boolean => {
+export const isOpenNow = (openingHours: WeeklyOpeningHours | null): boolean => {
+  if (!openingHours) {
+    return false;
+  }
+
   const currentDate = new Date();
-  const currentDay = currentDate.getDay(); // 0 = Sunday, 1 = Monday, ..., 6 = Saturday
-  const currentTime = currentDate.getHours() * 60 + currentDate.getMinutes(); // Percben kifejezett idő
+  const currentDay = currentDate.getDay();
+  const currentTime = currentDate.getHours() * 60 + currentDate.getMinutes();
 
   let todayOpeningHours: OpeningHours | null = null;
 
-  // A nap alapján megkapjuk az adott nap nyitvatartását
   switch (currentDay) {
-    case 0: // Vasárnap
+    case 0:
       todayOpeningHours = openingHours.sunday;
       break;
-    case 1: // Hétfő
+    case 1:
       todayOpeningHours = openingHours.monday;
       break;
-    case 2: // Kedd
+    case 2:
       todayOpeningHours = openingHours.tuesday;
       break;
-    case 3: // Szerda
+    case 3:
       todayOpeningHours = openingHours.wednesday;
       break;
-    case 4: // Csütörtök
+    case 4:
       todayOpeningHours = openingHours.thursday;
       break;
-    case 5: // Péntek
+    case 5:
       todayOpeningHours = openingHours.friday;
       break;
-    case 6: // Szombat
+    case 6:
       todayOpeningHours = openingHours.saturday;
       break;
+    default:
+      return false;
   }
 
-  // Ha nincs nyitvatartás megadva a mai napra, akkor zárva van
   if (!todayOpeningHours) {
     return false;
   }
 
-  // Átváltjuk a nyitvatartás időpontjait percekre
   const openingTime =
     parseInt(todayOpeningHours.from.split(":")[0]) * 60 +
     parseInt(todayOpeningHours.from.split(":")[1]);
@@ -45,6 +48,5 @@ export const isOpenNow = (openingHours: WeeklyOpeningHours): boolean => {
     parseInt(todayOpeningHours.to.split(":")[0]) * 60 +
     parseInt(todayOpeningHours.to.split(":")[1]);
 
-  // Ha a jelenlegi idő a nyitvatartási időn belül van, akkor nyitva van
   return currentTime >= openingTime && currentTime <= closingTime;
 };

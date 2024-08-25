@@ -1,6 +1,6 @@
 import React from "react";
 import List from "./components/List";
-import Map from "./components/Map";
+import Map from "./components/MyMap";
 
 const App: React.FC = () => {
   return (

@@ -5,16 +5,18 @@ export default function List() {
   const { venues } = useStore();
 
   return (
-    <div className="flex flex-col w-[100%] bg-black text-white p-4">
-      <span className="font-thin text-2xl leading-[60px] font-rubik">
+    <div className="flex flex-col w-[30%] bg-black text-white p-4 z-10">
+      <span className="font-thin text-2xl leading-[60px] font-rubik text-center ">
         HOAX coffee
       </span>
-      <span className="font-bold text-4xl font-rubik">SPECIALITY LOCATOR</span>
+      <span className="font-bold text-4xl font-rubik text-center">
+        SPECIALITY LOCATOR
+      </span>
       <br />
       <div className=" max-h-[80vh] overflow-y-auto ">
-        {venues.map((venue) => (
+        {venues.map((venue, index) => (
           <>
-            <ListItem key={venue.id} venueId={venue.id} />
+            <ListItem key={venue.id || index} venueId={venue.id} />
             <div className="border-t border-gray-800 "></div>
           </>
         ))}
