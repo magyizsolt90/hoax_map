@@ -12,12 +12,6 @@ const getVenues = async (): Promise<Venue[]> => {
       headers: {
         "x-api-key": process.env.REACT_APP_API_KEY as string,
       },
-      params: {
-        coffeeBeans: ["ESPRESSO"],
-        coffeeTypes: ["LATTE"],
-        features: ["WIFI"],
-        isOpen: ["TODAY"],
-      },
     });
     return response.data;
   } catch (error) {

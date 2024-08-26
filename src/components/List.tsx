@@ -7,11 +7,11 @@ export default function List() {
 
   return (
     <div className="flex flex-col h-screen w-[30%] bg-black text-white p-4 z-10 relative">
-      <span className="font-thin text-2xl leading-[60px] font-rubik text-center ">
+      <span className="font-thin text-xl  font-rubik text-center ">
         HOAX coffee
       </span>
 
-      <span className="font-bold text-4xl font-rubik text-center">
+      <span className="font-bold text-2xl font-rubik text-center">
         SPECIALITY LOCATOR
       </span>
       <br />

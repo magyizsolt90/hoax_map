@@ -23,24 +23,24 @@ const ListItem = ({ venueId, map }: ListItemProps) => {
       onClick={handleClick}
       className={`p-5 rounded-lg shadow-md flex flex-col space-y-2 cursor-pointer ${
         map
-          ? "bg-zinc-100 bg-opacity-10 border border-black rounded-[32px] backdrop-blur-md w-[310px]"
+          ? "bg-zinc-100 bg-opacity-10 rounded-3xl shadow-black shadow-xl backdrop-blur-md w-[310px]"
           : "hover:bg-gray-700 "
       }`}
     >
       <div className="flex justify-between items-center">
         <span className="font-bold text-lg flex flex-row items-center gap-2">
           <Icon
-            src={isOpen ? "/icons/whiteJar.svg" : "/icons/grayJar.svg"}
+            src={isOpen || map ? "/icons/whiteJar.svg" : "/icons/grayJar.svg"}
             alt="Jar"
           />
-          <span className={isOpen ? "text-white" : "text-zinc-500"}>
+          <span className={isOpen || map ? "text-white" : "text-zinc-500"}>
             {venue.name}
           </span>
         </span>
       </div>
       <span
         className={` ${
-          isOpen ? "text-white" : "text-zinc-500"
+          isOpen || map ? "text-white" : "text-zinc-500"
         } font-light text-base flex flex-row itemc-center gap-2`}
       >
         <span className="font-rubik">
@@ -59,17 +59,36 @@ const ListItem = ({ venueId, map }: ListItemProps) => {
             </span>
           </>
         )}
+        {!isOpen && map && (
+          <>
+            <div className="font-bold"> &middot; </div>
+            <span
+              className={`
+               text-gray-500 
+             font-medium text-base`}
+            >
+              zárva
+            </span>
+          </>
+        )}
       </span>
       <div className="flex flex-row items-center">
         <Icon
-          src={isOpen ? "/icons/whiteBean.svg" : "/icons/grayBean.svg"}
+          src={isOpen || map ? "/icons/whiteBean.svg" : "/icons/grayBean.svg"}
           alt="Jar"
           className="mr-1"
         />
         <div
-          className={`h-3 w-[2px] mr-2 ${isOpen ? "bg-white" : "bg-zinc-500"}`}
+          id="vertically divider"
+          className={`h-3 w-[2px] mr-2 ${
+            isOpen || map ? "bg-white" : "bg-zinc-500"
+          }`}
         />
-        <span className="text-sm font-medium text-white font-rubik">
+        <span
+          className={`${
+            isOpen || map ? "text-white" : "text-zinc-500"
+          } text-sm font-medium  font-rubik`}
+        >
           {venue.beansInTheGrinder.join(", ")}
         </span>
       </div>
