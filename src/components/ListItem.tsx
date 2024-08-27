@@ -21,9 +21,9 @@ const ListItem = ({ venueId, map }: ListItemProps) => {
   return (
     <div
       onClick={handleClick}
-      className={`p-5 rounded-lg shadow-md flex flex-col space-y-2 cursor-pointer ${
+      className={`p-5 rounded-[20px] shadow-md flex flex-col space-y-2 cursor-pointer ${
         map
-          ? "bg-zinc-100 bg-opacity-10 rounded-3xl shadow-black shadow-xl backdrop-blur-md w-[310px]"
+          ? "bg-zinc-100 bg-opacity-10 rounded-[30px] shadow-gray shadow-lg backdrop-blur-md w-[310px]"
           : "hover:bg-gray-700 "
       }`}
     >
@@ -56,18 +56,6 @@ const ListItem = ({ venueId, map }: ListItemProps) => {
              font-medium text-base`}
             >
               nyitva
-            </span>
-          </>
-        )}
-        {!isOpen && map && (
-          <>
-            <div className="font-bold"> &middot; </div>
-            <span
-              className={`
-               text-gray-500 
-             font-medium text-base`}
-            >
-              zárva
             </span>
           </>
         )}
