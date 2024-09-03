@@ -2,7 +2,22 @@ import { useStore } from "../context/store";
 import { isOpenNow } from "../functions";
 import Icon from "./ui/Icon";
 import { ListItemProps } from "../types";
+import { CafeType } from "../types"; // Adjust the path as necessary
 
+const IconMapping: Record<CafeType, string> = {
+  [CafeType.CAFE]: "/icons/cafeTypes/cafe.svg",
+  [CafeType.RESTAURANT]: "/icons/cafeTypes/restaurant.svg",
+  [CafeType.BAR]: "/icons/cafeTypes/bar.svg",
+  [CafeType.TRUCK]: "/icons/cafeTypes/truck.svg",
+  [CafeType.DELICATES]: "/icons/cafeTypes/deli.svg",
+  [CafeType.SHOP]: "/icons/cafeTypes/market.svg",
+  [CafeType.STUDIO]: "/icons/cafeTypes/studio.svg",
+  [CafeType.BISTRO]: "/icons/cafeTypes/bistro.svg",
+  [CafeType.PASTRY_SHOP]: "/icons/cafeTypes/sweet.svg",
+  [CafeType.BAKERY]: "/icons/cafeTypes/bakery.svg",
+  [CafeType.GUESTHOUSE]: "/icons/cafeTypes/motel.svg",
+  [CafeType.COMMUNITY_VENUE]: "/icons/cafeTypes/coworking.svg",
+};
 const ListItem = ({ venueId, map }: ListItemProps) => {
   const { venues, setSelectedVenue } = useStore();
 
@@ -18,6 +33,8 @@ const ListItem = ({ venueId, map }: ListItemProps) => {
     setSelectedVenue(venue);
   };
 
+  const venueIcon = IconMapping[venue.type] || "/icons/cafeTypes/cafeType_cafe.svg";
+
   return (
     <div
       onClick={handleClick}
@@ -30,7 +47,7 @@ const ListItem = ({ venueId, map }: ListItemProps) => {
       <div className="flex justify-between items-center">
         <span className="font-bold text-lg flex flex-row items-center gap-2">
           <Icon
-            src={isOpen || map ? "/icons/whiteJar.svg" : "/icons/grayJar.svg"}
+            src={venueIcon}
             alt="Jar"
           />
           <span className={isOpen || map ? "text-white" : "text-zinc-500"}>

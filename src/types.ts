@@ -10,7 +10,7 @@ export interface Venue {
   openingHours: Record<string, { from: string; to: string } | null>;
   coffeeTypes: string[];
   features: string[];
-  type: string;
+  type: CafeType;
   interiorImage: string;
   exteriorImage: string;
   beansForSale: string[];
@@ -42,4 +42,19 @@ export interface ImageProps {
 export interface ListItemProps {
   venueId: number;
   map?: boolean;
+}
+
+export enum CafeType {
+  CAFE = 'CAFE',
+  RESTAURANT = 'RESTAURANT',
+  BAR = 'BAR',
+  TRUCK = 'TRUCK',
+  DELICATES = 'DELICATES',
+  SHOP = 'SHOP',
+  STUDIO = 'STUDIO',
+  BISTRO = 'BISTRO',
+  PASTRY_SHOP = 'PASTRY_SHOP',
+  BAKERY = 'BAKERY',
+  GUESTHOUSE = 'GUESTHOUSE',
+  COMMUNITY_VENUE = 'COMMUNITY_VENUE',
 }
