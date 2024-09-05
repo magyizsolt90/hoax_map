@@ -47,7 +47,7 @@ const ListItem = ({ venueId, map }: ListItemProps) => {
     >
       <div className="flex justify-between items-center">
         <span className="font-bold text-lg flex flex-row items-center gap-2">
-          <Icon src={venueIcon} alt="VenueIcon" />
+          <Icon src={venueIcon} alt="VenueIcon" className="h-[25px] w-[25px]" />
           <span className={isOpen || map ? "text-white" : "text-zinc-500"}>
             {venue.name}
           </span>
@@ -79,7 +79,7 @@ const ListItem = ({ venueId, map }: ListItemProps) => {
         <Icon
           src={isOpen || map ? "/icons/whiteBean.svg" : "/icons/grayBean.svg"}
           alt="Jar"
-          className="mr-1"
+          className="mr-1 h-[20px] w-[20px]"
         />
         <div
           id="vertically divider"
