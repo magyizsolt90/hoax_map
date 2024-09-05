@@ -10,7 +10,7 @@ const isLocal = process.env.NODE_ENV === "development";
 const MAPBOX_TOKEN = process.env.REACT_APP_MAPBOX_TOKEN;
 
 const MyMap = () => {
-  const { venues, selectedVenue } = useStore();
+  const { venues, selectedVenue, setSelectedVenue } = useStore();
   const mapRef = useRef<MapRef | null>(null);
   const [hoveredVenue, setHoveredVenue] = useState<number | null>(null);
   const [hoverPosition, setHoverPosition] = useState({ top: 0, left: 0 });
@@ -33,6 +33,10 @@ const MyMap = () => {
     const rect = e.currentTarget.getBoundingClientRect();
     setHoveredVenue(venueId);
     setHoverPosition({ top: rect.top, left: rect.left });
+  };
+
+  const handleClick = (venue: any) => {
+    setSelectedVenue(venue);
   };
 
   return (
@@ -60,7 +64,14 @@ const MyMap = () => {
               className="relative bg-black w-[56px] h-[56px] flex items-center justify-center rounded-[16px]"
               onMouseEnter={(e) => handleMouseEnter(e, venue.id)}
               onMouseLeave={() => setHoveredVenue(null)}
-              style={{ zIndex: hoveredVenue === venue.id ? 100 : 1 }}
+              onClick={() => handleClick(venue)}
+              style={{
+                zIndex:
+                  hoveredVenue === venue.id ||
+                  (selectedVenue && selectedVenue.id === venue.id)
+                    ? 100
+                    : 1,
+              }}
             >
               <Icon
                 src={
@@ -81,8 +92,8 @@ const MyMap = () => {
           <div
             className="absolute z-50 pointer-events-none"
             style={{
-              top: hoverPosition.top - 40,
-              left: hoverPosition.left - 28,
+              top: hoverPosition.top - 155,
+              left: hoverPosition.left - 120,
             }}
           >
             <ListItem venueId={hoveredVenue} map={true} />
