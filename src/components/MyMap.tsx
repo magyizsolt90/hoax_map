@@ -5,6 +5,7 @@ import Icon from "./ui/Icon";
 import "mapbox-gl/dist/mapbox-gl.css";
 import ListItem from "./ListItem";
 import { createPortal } from "react-dom";
+import { IconMapping } from "./ListItem";
 
 const isLocal = process.env.NODE_ENV === "development";
 const MAPBOX_TOKEN = process.env.REACT_APP_MAPBOX_TOKEN;
@@ -61,7 +62,11 @@ const MyMap = () => {
             anchor="bottom"
           >
             <div
-              className="relative bg-black w-[56px] h-[56px] flex items-center justify-center rounded-[16px]"
+              className={`relative w-[56px] h-[56px] flex items-center justify-center rounded-[16px] ${
+                selectedVenue && selectedVenue.id === venue.id
+                  ? "bg-black ring-2 ring-green-500"
+                  : "bg-black"
+              }`}
               onMouseEnter={(e) => handleMouseEnter(e, venue.id)}
               onMouseLeave={() => setHoveredVenue(null)}
               onClick={() => handleClick(venue)}
@@ -75,11 +80,10 @@ const MyMap = () => {
             >
               <Icon
                 src={
-                  selectedVenue && selectedVenue.id === venue.id
-                    ? "/icons/greenJar.svg"
-                    : "/icons/whiteJar.svg"
+                  IconMapping[venue.type] ||
+                  "/icons/cafeTypes/cafeType_cafe.svg"
                 }
-                alt="Marker"
+                alt="VenueIcon"
                 className="w-[24px] h-[24px] z-10"
               />
             </div>

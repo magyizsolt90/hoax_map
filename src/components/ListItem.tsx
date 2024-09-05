@@ -4,7 +4,7 @@ import Icon from "./ui/Icon";
 import { ListItemProps } from "../types";
 import { CafeType } from "../types"; // Adjust the path as necessary
 
-const IconMapping: Record<CafeType, string> = {
+export const IconMapping: Record<CafeType, string> = {
   [CafeType.CAFE]: "/icons/cafeTypes/cafe.svg",
   [CafeType.RESTAURANT]: "/icons/cafeTypes/restaurant.svg",
   [CafeType.BAR]: "/icons/cafeTypes/bar.svg",
@@ -33,7 +33,8 @@ const ListItem = ({ venueId, map }: ListItemProps) => {
     setSelectedVenue(venue);
   };
 
-  const venueIcon = IconMapping[venue.type] || "/icons/cafeTypes/cafeType_cafe.svg";
+  const venueIcon =
+    IconMapping[venue.type] || "/icons/cafeTypes/cafeType_cafe.svg";
 
   return (
     <div
@@ -46,10 +47,7 @@ const ListItem = ({ venueId, map }: ListItemProps) => {
     >
       <div className="flex justify-between items-center">
         <span className="font-bold text-lg flex flex-row items-center gap-2">
-          <Icon
-            src={venueIcon}
-            alt="Jar"
-          />
+          <Icon src={venueIcon} alt="VenueIcon" />
           <span className={isOpen || map ? "text-white" : "text-zinc-500"}>
             {venue.name}
           </span>
