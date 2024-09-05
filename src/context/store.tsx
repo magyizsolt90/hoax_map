@@ -21,7 +21,6 @@ export const Store = ({ children }: { children: ReactNode }) => {
       setLoading(true);
       try {
         const data = await getVenues();
-        console.log(data);
         setVenues(data);
         setError(null);
       } catch (err) {

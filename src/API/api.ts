@@ -13,7 +13,13 @@ const getVenues = async (): Promise<Venue[]> => {
         "x-api-key": process.env.REACT_APP_API_KEY as string,
       },
     });
-    return response.data;
+
+    // Sort venues by name
+    const sortedVenues = response.data.sort((a, b) =>
+      a.name.localeCompare(b.name)
+    );
+
+    return sortedVenues;
   } catch (error) {
     console.error("Error fetching venues:", error);
     return [];

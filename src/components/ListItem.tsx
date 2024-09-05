@@ -47,7 +47,14 @@ const ListItem = ({ venueId, map }: ListItemProps) => {
     >
       <div className="flex justify-between items-center">
         <span className="font-bold text-lg flex flex-row items-center gap-2">
-          <Icon src={venueIcon} alt="VenueIcon" className="h-[25px] w-[25px]" />
+          <div className={`relative ${!isOpen ? "opacity-50" : ""}`}>
+            <Icon
+              src={venueIcon}
+              alt="VenueIcon"
+              className="h-[25px] w-[25px]"
+            />
+            {!isOpen && <div className="absolute bg-gray-500 opacity-50 " />}
+          </div>
           <span className={isOpen || map ? "text-white" : "text-zinc-500"}>
             {venue.name}
           </span>
