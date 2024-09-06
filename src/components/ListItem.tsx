@@ -47,7 +47,7 @@ const ListItem = ({ venueId, map }: ListItemProps) => {
     >
       <div className="flex justify-between items-center">
         <span className="font-bold text-lg flex flex-row items-center gap-2">
-          <div className={`relative ${!isOpen ? "opacity-50" : ""}`}>
+          <div className={`relative ${!isOpen && !map ? "opacity-50" : ""}`}>
             <Icon
               src={venueIcon}
               alt="VenueIcon"
