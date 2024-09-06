@@ -18,7 +18,6 @@ const getVenues = async (): Promise<Venue[]> => {
     const sortedVenues = response.data.sort((a, b) =>
       a.name.localeCompare(b.name)
     );
-
     return sortedVenues;
   } catch (error) {
     console.error("Error fetching venues:", error);

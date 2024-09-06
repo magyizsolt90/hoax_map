@@ -15,6 +15,7 @@ export interface Venue {
   exteriorImage: string;
   beansForSale: string[];
   beansInTheGrinder: string[];
+  claimedAt: string | null;
 }
 export interface StoreContextType {
   venues: Venue[];
@@ -45,16 +46,16 @@ export interface ListItemProps {
 }
 
 export enum CafeType {
-  CAFE = 'CAFE',
-  RESTAURANT = 'RESTAURANT',
-  BAR = 'BAR',
-  TRUCK = 'TRUCK',
-  DELICATES = 'DELICATES',
-  SHOP = 'SHOP',
-  STUDIO = 'STUDIO',
-  BISTRO = 'BISTRO',
-  PASTRY_SHOP = 'PASTRY_SHOP',
-  BAKERY = 'BAKERY',
-  GUESTHOUSE = 'GUESTHOUSE',
-  COMMUNITY_VENUE = 'COMMUNITY_VENUE',
+  CAFE = "CAFE",
+  RESTAURANT = "RESTAURANT",
+  BAR = "BAR",
+  TRUCK = "TRUCK",
+  DELICATES = "DELICATES",
+  SHOP = "SHOP",
+  STUDIO = "STUDIO",
+  BISTRO = "BISTRO",
+  PASTRY_SHOP = "PASTRY_SHOP",
+  BAKERY = "BAKERY",
+  GUESTHOUSE = "GUESTHOUSE",
+  COMMUNITY_VENUE = "COMMUNITY_VENUE",
 }

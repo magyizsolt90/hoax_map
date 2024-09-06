@@ -59,6 +59,13 @@ const ListItem = ({ venueId, map }: ListItemProps) => {
             {venue.name}
           </span>
         </span>
+        {venue.claimedAt && (
+          <Icon
+            src={isOpen ? "/icons/whitePerson.svg" : "/icons/grayPerson.svg"}
+            alt="ClaimedIcon"
+            className="justify-end"
+          />
+        )}
       </div>
       <span
         className={` ${
@@ -84,9 +91,9 @@ const ListItem = ({ venueId, map }: ListItemProps) => {
       </span>
       <div className="flex flex-row items-center">
         <Icon
-          src={isOpen || map ? "/icons/whiteBean.svg" : "/icons/grayBean.svg"}
+          src={isOpen || map ? "/icons/whitebean.svg" : "/icons/bean.svg"}
           alt="Jar"
-          className="mr-1 h-[20px] w-[20px]"
+          className="mr-1 h-[18px] w-[18px]"
         />
         <div
           id="vertically divider"
