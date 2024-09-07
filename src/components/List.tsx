@@ -12,7 +12,7 @@ export default function List() {
       </span>
 
       <span className="font-bold text-2xl font-rubik text-center">
-        SPECIALITY LOCATOR
+        SPECIALITY LOKÁTOR
       </span>
       <br />
       <div className="max-h-[80vh] overflow-y-auto scrollbar-hide">
