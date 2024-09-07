@@ -63,7 +63,7 @@ const ListItem = ({ venueId, map }: ListItemProps) => {
           <Icon
             src={isOpen ? "/icons/whitePerson.svg" : "/icons/grayPerson.svg"}
             alt="ClaimedIcon"
-            className="justify-end"
+            className="justify-end h-[24px] w-[24px]"
           />
         )}
       </div>
