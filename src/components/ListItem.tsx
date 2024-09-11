@@ -61,7 +61,7 @@ const ListItem = ({ venueId, map }: ListItemProps) => {
         </span>
         {venue.claimedAt && (
           <Icon
-            src={isOpen ? "/icons/whitePerson.svg" : "/icons/grayPerson.svg"}
+            src={!map ? isOpen ? "/icons/whitePerson.svg" : "/icons/grayPerson.svg" : "/icons/whitePerson.svg" }
             alt="ClaimedIcon"
             className="justify-end h-[24px] w-[24px]"
           />
