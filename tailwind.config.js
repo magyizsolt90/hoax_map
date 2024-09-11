@@ -3,6 +3,10 @@ module.exports = {
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
     extend: {
+      backgroundImage: {
+        "gradient-custom":
+          "linear-gradient(0deg, rgba(34,193,195,1) 0%, rgba(253,187,45,1) 100%)",
+      },
       fontFamily: {
         rubik: ["Rubik", "sans-serif"],
       },
@@ -12,8 +16,8 @@ module.exports = {
         //gray: "gray",
       },
       boxShadow: {
-        gray: "0 4px 6px rgba(0, 0, 0, 0.5)"
-      }
+        gray: "0 4px 6px rgba(0, 0, 0, 0.5)",
+      },
     },
   },
   plugins: [],

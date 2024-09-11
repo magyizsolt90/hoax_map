@@ -5,6 +5,7 @@ import MoveButton from "./components/MoveButton";
 import { useStore } from "./context/store";
 import Loader from "./components/ui/Loader";
 import Icon from "./components/ui/Icon";
+import MobileView from "./components/MobileView";
 
 const App: React.FC = () => {
   const { error, loading } = useStore();
@@ -15,7 +16,7 @@ const App: React.FC = () => {
 
   return (
     <>
-      <div className="flex flex-row relative">
+      <div className="hidden md:flex flex-row relative">
         <a href="https://www.hoaxcoffee.com/" target="_blank" rel="noreferrer">
           <Icon
             className="absolute top-5 right-5 w-[80px] h-[80px] z-50 cursor-pointer fill-white"
@@ -33,8 +34,12 @@ const App: React.FC = () => {
             <Map />
           </>
         )}
+        <MoveButton />
       </div>
-      <MoveButton />
+
+      <div className="flex md:hidden h-screen items-center justify-center flex-col bg-gradient-custom">
+        <MobileView />
+      </div>
     </>
   );
 };
