@@ -5,7 +5,7 @@ module.exports = {
     extend: {
       backgroundImage: {
         "gradient-custom":
-          "linear-gradient(0deg, rgba(34,193,195,1) 0%, rgba(253,187,45,1) 100%)",
+          "linear-gradient(0deg, rgba(84,88,88,1) 0%, rgba(0,0,0,1) 35%)",
       },
       fontFamily: {
         rubik: ["Rubik", "sans-serif"],
