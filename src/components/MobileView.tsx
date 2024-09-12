@@ -1,11 +1,12 @@
-import React from "react";
-import Icon from "./ui/Icon";
-
 export default function MobileView() {
   return (
     <div className="flex flex-col items-center justify-center ">
-      <Icon
-        className="absolute top-[30px] left-1/2 transform -translate-x-1/2 w-[110px] h-[110px] z-50 cursor-pointer fill-white"
+      <img
+        style={{
+          width: "110px",
+          height: "110px",
+        }}
+        className="absolute top-[30px] left-1/2 transform -translate-x-1/2  z-50 cursor-pointer fill-white"
         src="/icons/hoax.svg"
         alt="Hoax"
       />
